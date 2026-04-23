@@ -267,7 +267,7 @@ Partial Class MeterWindow
         cSep.Resizable = DataGridViewTriState.False
         cSep.SortMode = DataGridViewColumnSortMode.NotSortable
         Dim sSep As New DataGridViewCellStyle()
-        sSep.BackColor = Color.FromArgb(200, 200, 200)
+        sSep.BackColor = Color.FromArgb(201, 201, 201)
         cSep.DefaultCellStyle = sSep
         _harmonicsGrid.Columns.Add(cSep)
 

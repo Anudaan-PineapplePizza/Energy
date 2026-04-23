@@ -198,7 +198,7 @@ Partial Class MeterWindow
             Case DialogResult.No
                 StopRecording(saveFiles:=False)
             Case Else
-                ' Continue : ne rien faire, l enregistrement continue
+                ' Continue : ne rien faire, l'enregistrement continue.
         End Select
     End Sub
 
