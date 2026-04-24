@@ -327,12 +327,28 @@ Public Class ConnectionWindow
     '
     ' (goes up 2 levels from bin\Debug\ to project root)
     ' ─────────────────────────────────────────────────────────────────────────────
+    'Private Shared Function AppFolder(subFolder As String) As String
+    '    Dim exeDir As String = IO.Path.GetDirectoryName(
+    '        System.Reflection.Assembly.GetExecutingAssembly().Location)
+    '    Dim projDir As String = IO.Path.GetDirectoryName(IO.Path.GetDirectoryName(exeDir))
+    '    Dim dir As String = IO.Path.Combine(projDir, subFolder)
+    '    If Not IO.Directory.Exists(dir) Then IO.Directory.CreateDirectory(dir)
+    '    Return dir
+    'End Function
+
     Private Shared Function AppFolder(subFolder As String) As String
-        Dim exeDir As String = IO.Path.GetDirectoryName(
-            System.Reflection.Assembly.GetExecutingAssembly().Location)
-        Dim projDir As String = IO.Path.GetDirectoryName(IO.Path.GetDirectoryName(exeDir))
-        Dim dir As String = IO.Path.Combine(projDir, subFolder)
-        If Not IO.Directory.Exists(dir) Then IO.Directory.CreateDirectory(dir)
+        Dim baseDir As String =
+        Path.Combine(
+            Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData),
+            "Electric_Meter_53U"
+        )
+
+        Dim dir As String = Path.Combine(baseDir, subFolder)
+
+        If Not Directory.Exists(dir) Then
+            Directory.CreateDirectory(dir)
+        End If
+
         Return dir
     End Function
 

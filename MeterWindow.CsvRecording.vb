@@ -625,12 +625,28 @@ Partial Class MeterWindow
         _csvPath = ""
     End Sub
 
+    'Private Shared Function AppFolder(subFolder As String) As String
+    '    Dim exeDir As String = Path.GetDirectoryName(
+    '        System.Reflection.Assembly.GetExecutingAssembly().Location)
+    '    Dim projDir As String = Path.GetDirectoryName(Path.GetDirectoryName(exeDir))
+    '    Dim dir As String = Path.Combine(projDir, subFolder)
+    '    If Not Directory.Exists(dir) Then Directory.CreateDirectory(dir)
+    '    Return dir
+    'End Function
+
     Private Shared Function AppFolder(subFolder As String) As String
-        Dim exeDir As String = Path.GetDirectoryName(
-            System.Reflection.Assembly.GetExecutingAssembly().Location)
-        Dim projDir As String = Path.GetDirectoryName(Path.GetDirectoryName(exeDir))
-        Dim dir As String = Path.Combine(projDir, subFolder)
-        If Not Directory.Exists(dir) Then Directory.CreateDirectory(dir)
+        Dim baseDir As String =
+        Path.Combine(
+            Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData),
+            "Electric_Meter_53U"
+        )
+
+        Dim dir As String = Path.Combine(baseDir, subFolder)
+
+        If Not Directory.Exists(dir) Then
+            Directory.CreateDirectory(dir)
+        End If
+
         Return dir
     End Function
 
