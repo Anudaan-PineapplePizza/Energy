@@ -19,18 +19,18 @@
 
         Public Ramping As Integer   '1440 Ramping = '0' // else '1'
 
-        Public V_Nominal As Single
-        Public I_Nominal As Single
-        Public Firing As Single
-        Public Control As Single
-        Public I_Limit As Single
-        Public I2_Transfer As Single
-        Public Xfmr As Single
-        Public Heater As Single
-        Public AI_Fct As Single
-        Public AI_Type As Single
-        Public DI1_Fct As Single
-        Public DI2_Fct As Single
+        'Public V_Nominal As Single
+        'Public I_Nominal As Single
+        'Public Firing As Single
+        'Public Control As Single
+        'Public I_Limit As Single
+        'Public I2_Transfer As Single
+        'Public Xfmr As Single
+        'Public Heater As Single
+        'Public AI_Fct As Single
+        'Public AI_Type As Single
+        'Public DI1_Fct As Single
+        'Public DI2_Fct As Single
 
 
     End Structure
